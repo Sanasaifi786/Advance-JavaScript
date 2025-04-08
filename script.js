@@ -45,7 +45,7 @@
 // arr.forEach(e=> console.log(e));
 
 // let spread=["so","much","fun"];
-// let message=["javascript","is", ...spread, "and","very"];
+// let message=["javascript","is",...spread, "and","very"];
 // console.log(message);
 
 // function addTwoNumbers(x,y){
@@ -61,7 +61,30 @@
 // let arr2=[6,7];
 // addTwoNumbers(...arr1,...arr2)
 
-function someFuntion(para1,...para2){
-    console.log(para1,para2);
+// function someFuntion(para1,...para2){
+//     console.log(para1,para2);
+// }
+// someFuntion("hi","there!","how are you?"); 
+
+//Returning funtion values
+// function addTwoNumbers(x,y){
+//     console.log(x+y);
+// }
+// let result=addTwoNumbers(4,5);
+// console.log(result);
+
+// let addTwoNumbers=(x,y)=>{
+//     console.log(x+y);
+// }
+// addTwoNumbers(4,5);
+
+function addTwoNumbers(x,y){
+    return x+y;
 }
-someFuntion("hi","there!","how are you?");
+let resultArr=[];
+for(let i=0; i<10; i++)
+{
+    let result=addTwoNumbers(i,2*i);
+    resultArr.push(result);
+}
+console.log(resultArr);
