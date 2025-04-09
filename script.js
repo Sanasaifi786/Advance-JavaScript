@@ -78,13 +78,139 @@
 // }
 // addTwoNumbers(4,5);
 
-function addTwoNumbers(x,y){
-    return x+y;
+// function addTwoNumbers(x,y){
+//     return x+y;
+// }
+// let resultArr=[];
+// for(let i=0; i<10; i++)
+// {
+//     let result=addTwoNumbers(i,2*i);
+//     resultArr.push(result);
+// }
+// console.log(resultArr);
+
+//Local variables in function
+// function testAvailability(x){
+//     console.log("available here:", x);
+// }
+// testAvailability("hi!");
+// console.log("not available here:",x);
+
+// function testAvailability(){
+//     let y="local variable!";
+//     console.log("available here:", y);
+// }
+// testAvailability();
+// console.log("not available here:",y);
+
+// function testAvailability(){
+//     let y="I'll return!"
+//     console.log("available here:", y);
+//     return y;
+// }
+// let z=testAvailability();
+// console.log("outside the function:",z);
+// console.log("not available here:",y);
+
+//let vs var variable
+// function doingStuff()
+// {
+//     if(true)
+//     {
+//         var x="local";
+//     }
+//     console.log(x);
+// }
+// doingStuff();
+
+// function doingStuff()
+// {
+//     if(true)
+//     {
+//         console.log(x)
+//         let x="local";
+//     }
+// }
+// doingStuff();
+
+//const scope
+// function doingStuff()
+// {
+//     if(true)
+//     {
+//         const x="local";
+//     }
+//     console.log(x);
+// }
+// doingStuff();
+
+//global variable
+// let globalVar="Accessible everywhere!";
+// console.log("outside funtion:",globalVar);
+// function creationNewScope(x)
+// {
+//     console.log("access to global vars inside funtion.",globalVar);
+// }
+// creationNewScope("some parameter");
+// console.log("still available:",globalVar);
+
+// let x="global";
+// function doingStuff()
+// {
+//     let x="local";
+//     console.log(x);
+// }
+// doingStuff();
+// console.log(x);
+
+// let x="global";
+// function doingStuff(x)
+// {
+//     console.log(x);
+// }
+// doingStuff("param");
+
+// function confuseReader()
+// {
+//     x="guess my scope...";
+//     console.log("Inside the funtion:",x);
+// }
+// confuseReader()
+// console.log("outside of function:",x);
+
+//Invoked function
+// (function(){
+//     console.log("IIFE");
+// }
+// )();
+
+// (function(x,y){
+//     console.log(x+y);
+// }
+// )(4,5);
+
+// (()=>{
+//     console.log("run right away");
+// })();
+
+//Recursive funtions
+// function getRecursive(nr){
+//     console.log(nr);
+//     if(nr>0){
+//         getRecursive(--nr);
+//     }
+// }
+// getRecursive(3);
+
+function logRecursive(nr){
+    console.log("started function",nr);
+    if(nr>0)
+    {
+        logRecursive(nr-1);
+    }
+    else{
+        console.log("done with recursive");
+    }
+    console.log("ended function",nr);
 }
-let resultArr=[];
-for(let i=0; i<10; i++)
-{
-    let result=addTwoNumbers(i,2*i);
-    resultArr.push(result);
-}
-console.log(resultArr);
+logRecursive(3);
