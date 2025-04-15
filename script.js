@@ -195,12 +195,12 @@
 
 //Recursive funtions
 // function getRecursive(nr){
-//     console.log(nr);
 //     if(nr>0){
 //         getRecursive(--nr);
 //     }
+// console.log(nr);
 // }
-// getRecursive(3);
+//  getRecursive(3);
 
 // function logRecursive(nr){
 //     console.log("started function",nr);
@@ -214,3 +214,62 @@
 //     console.log("ended function",nr);
 // }
 // logRecursive(3);
+
+//The performance of recursion is slightly worse than the performance of regular itration using a loop. so if this 
+
+//Nested function
+// function doOuterFunctionStuff(nr)
+// {
+//     console.log("outer function");
+//     doInnerFunctionStuff(nr);
+//     function doInnerFunctionStuff(x){
+//         console.log(x+7);
+//         console.log("I can access outer variable",nr)
+//     }
+// }
+// doOuterFunctionStuff(3);
+
+//Anonymous functions - like passing in functions as parameters.the concept adds another abstruct layer to coding. this concept is called as callsback.
+//Function Callbacks- here is an example  of passing
+// let functionVariable=function(){
+//     console.log("not so secret through");
+// };
+// functionVariable();
+// function doFlexibleStuff(executesStuff){
+//     executesStuff();
+//     console.log("Inside doFlexibleStufffunction");
+// }
+// doFlexibleStuff(functionVariable);
+
+//In javascript there are many built in functions as you may know by now. one of them is the setTimeout()function.It is a very special function that is executing a certain function after a specified amount of time that it will wait first.
+// let youGotThis=function()
+// {
+//     console.log("you are doing really well,keep coding");
+// };
+// //setTimeout(youGotThis,1000);
+// setInterval(youGotThis,1000);
+
+// let testFunction=function(){
+//     console.log("hello");
+// }();
+
+// (function(){
+//     console.log("welcome");
+// })();
+// (function(){
+//     let firstName="Laurance";
+// })();
+// let result=(function(){
+//     let firstName="Laurance";
+//     return firstName;
+// })();
+// console.log(result);
+// (function (firstName){
+//     console.log("My name is",firstName);
+// })("Laurance");
+
+var addFive1=function addFive1(num){
+    return num+2;
+};
+let addFive2=(num)=>num+2;
+console.log(addFive1(14));
