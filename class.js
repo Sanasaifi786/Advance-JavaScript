@@ -91,27 +91,76 @@
 // }
 // let p = new Person("Sana","Saifi");
 
-class person{
-        #firstname;
-        #lastname;
-        constructor(firstname,lastname){
-            this.#firstname=firstname;
-            this.#lastname=lastname;
-        }
-        get firstname(){
-            return this.#firstname;
-        }
-        set firstname(firstname){
-            this.#firstname=firstname;
-        }
-        get lastname(){
-            return this.#lastname;
-        }
-        set lastname(lastname){
-            this.#lastname=lastname;
-        }
+// class person{
+//         #firstname;
+//         #lastname;
+//         constructor(firstname,lastname){
+//             this.#firstname=firstname;
+//             this.#lastname=lastname;
+//         }
+//         get firstname(){
+//             return this.#firstname;
+//         }
+//         set firstname(firstname){
+//             this.#firstname=firstname;
+//         }
+//         get lastname(){
+//             return this.#lastname;
+//         }
+//         set lastname(lastname){
+//             this.#lastname=lastname;
+//         }
+//     }
+// let p=new person("sana","saifi");
+// console.log(p.firstname);
+// p.firstname="Iza";
+// console.log(p.firstname);
+
+//Inheritance = it is the concept that classes can have child classes that inherit the properties and methods from the parent class
+//Instance variable is object
+//this=this is indicates the initailize the instamce variable
+// class Vehicle{
+//     constructor(color, currentSpeed,maxSpeed){
+//         this.color=color;
+//         this.currentSpeed=currentSpeed;
+//         this.maxSpeed=maxSpeed;
+//     }
+//     move(){
+//         console.log("moving at",this.currentSpeed);
+//     }
+//     accelerate(amount){
+//         this.currentSpeed+=amount;
+//     }
+// }
+// class Motorcycle extends Vehicle{
+//     constructor(color,currentSpeed,maxSpeed,fuel){
+//             super(color,currentSpeed,maxSpeed);
+//             this.fuel=fuel;
+//         }
+//         doWheelie(){
+//             console.log("Driving on one wheel");
+//         }
+//     }
+// let Motor=new Motorcycle("Black",0,250,"gasoline");
+// console.log(Motor.color);
+// Motor.accelerate(50);
+// Motor.move();
+
+//Prototypes= A protptype is the mechanism in javaScript that makes it possible to have objects. when nothing is specified when creating a class, the objects inherit form the object.prototype
+class Person{
+    constructor(firstname,lastname="Saifi"){
+        this.firstname=firstname;
+        this.lastname=lastname;
     }
-let p=new person("sana","saifi");
-console.log(p.firstname);
-p.firstname="Iza";
-console.log(p.firstname);
+    greet(){
+        console.log("Hi there");
+    }
+}
+Person.prototype.introduce=function(){
+    console.log("Hi, I'm",this.firstname);
+};
+Person.prototype.favoriteColor="Black";
+let p=new Person("sana","saifi");
+console.log(p.favoriteColor);
+p.introduce();
+p.greet();
